@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mark Attendance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2f3640;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        .card {
+            background: #fff;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px;
+            flex: 1 1 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        h2 {
+            color: #2f3640;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #00a8ff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0097e6;
+        }
+        input[type="file"] {
+            margin: 15px 0;
+        }
+        .upload-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #2f3640;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2f3640;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: #00a8ff;
+        }
+    </style>
+</head>
+<body>
+    <header>🕒 Mark Attendance</header>
+
+    <div class="container">
+        <!-- Live Camera Card -->
+        <div class="card">
+            <h2>Open Camera</h2>
+            <p>Mark attendance using live camera.</p>
+            <a href="{{ url_for('open_camera') }}"><button>📷 Open Camera</button></a>
+        </div>
+
+        <!-- Group Photo Upload Card -->
+        <div class="card">
+            <h2>Upload Group Photo</h2>
+            <p>Upload a photo containing all students to mark attendance automatically.</p>
+            <form action="{{ url_for('upload_group_photo') }}" method="POST" enctype="multipart/form-data">
+                <label class="upload-label">Choose Image:</label>
+                <input type="file" name="group_image" accept="image/*" required>
+                <br>
+                <button type="submit">📁 Upload & Mark Attendance</button>
+            </form>
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <a class="back-link" href="{{ url_for('index') }}">⬅ Back to Dashboard</a>
+    </div>
+</body>
+</html>
