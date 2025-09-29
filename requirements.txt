@@ -16,7 +16,7 @@ filelock==3.18.0
 Flask==2.3.2
 Flask-Cors==3.0.10
 fsspec==2025.5.1
-grpcio==1.48.2
+grpcio==1.62.3
 gym==0.26.2
 gym-notices==0.0.8
 h5py==3.13.0
@@ -37,27 +37,27 @@ onnx==1.15.0
 opencv-python==4.8.1.78
 packaging==25.0
 pandas==2.3.2
-pefile==2023.2.7
-# PettingZoo==1.15.0   <-- old, not compatible
+# pefile==2023.2.7   # REMOVE (Windows only, breaks on Render Linux)
 PettingZoo==1.24.3
 Pillow==10.4.0
-protobuf==3.20.3
-pyinstaller==6.16.0
-pyinstaller-hooks-contrib==2025.8
+protobuf==5.28.3
+# pyinstaller==6.16.0                # REMOVE (not needed for Render)
+# pyinstaller-hooks-contrib==2025.8  # REMOVE (same reason)
 pyperclip==1.10.0
 python-dateutil==2.9.0.post0
 pytz==2025.2
-# Removed pywin32 / pywin32-ctypes / pypiwin32 (Windows only)
 PyYAML==6.0.2
 requests==2.31.0
-scikit-learn==1.7.2
-scipy==1.15.3
+scikit-learn==1.5.2
+scipy==1.13.1
 six==1.17.0
 sympy==1.14.0
 tensorboard==2.19.0
 tensorboard-data-server==0.7.2
-threadpoolctl==3.6.0
-torch==2.4.1
+threadpoolctl==3.5.0
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
 tqdm==4.67.1
 typing_extensions==4.13.2
 tzdata==2025.2
